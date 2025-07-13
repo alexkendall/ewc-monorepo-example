@@ -17,6 +17,7 @@ export function NavigationProvider({
             screens: {
               home: '',
               'user-detail': 'users/:id',
+              favorites: 'favorites', // Add the linking config for the new route
             },
           },
         }),
