@@ -3,6 +3,7 @@
 import { TextLink } from 'solito/link'
 import { MotiLink } from 'solito/moti/app'
 import { Text, View } from 'react-native'
+import { FavoriteButton } from '../favorite-watch/components/FavoriteButton' // Import the new component
 
 export function HomeScreen() {
   return (
@@ -34,6 +35,11 @@ export function HomeScreen() {
           </TextLink>
           .
         </Text>
+      </View>
+      {/* Add the new FavoriteButton component */}
+      <View style={{ flexDirection: 'row', gap: 16, alignItems: 'center' }}>
+        <Text>Rolex Submariner</Text>
+        <FavoriteButton watchId="1" />
       </View>
       <View style={{ flexDirection: 'row', gap: 32 }}>
         <TextLink
@@ -69,14 +75,14 @@ export function HomeScreen() {
           </Text>
         </MotiLink>
       </View>
+      {/* Add a link to the new favorites screen */}
+      <TextLink href="/favorites" style={{ fontSize: 16, fontWeight: 'bold', color: 'green' }}>
+        View Favorites
+      </TextLink>
     </View>
   )
 }
 
 const H1 = ({ children }: { children: React.ReactNode }) => {
   return <Text style={{ fontWeight: '800', fontSize: 24 }}>{children}</Text>
-}
-
-const P = ({ children }: { children: React.ReactNode }) => {
-  return <Text style={{ textAlign: 'center' }}>{children}</Text>
 }
